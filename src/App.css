@@ -48,21 +48,33 @@ th {
   padding: 8px;
 }
 
-#data {
-  display: flex;
-  flex-direction: column;
-  margin: 1.5em 0;
-}
-
 label {
   text-align: left;
   margin: 0.5em 0;
   padding: 0 0.5em;
 }
 
+// Root component
+#parent {
+  display: flex;
+  gap: 100px;
+}
+
 #checkout-message {
   font-size: 1.3em;
   color: green;
+}
+
+// parent div of input divs
+#data {
+  display: flex;
+  flex-direction: column;
+  margin: 1.5em 0;
+}
+
+#counter {
+  border-left: 1px solid gray;
+  padding-left: 1em;
 }
 
 .logo {
