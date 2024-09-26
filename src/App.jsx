@@ -20,6 +20,9 @@ function App() {
     };
 
     setCartItems([...cartItems, newItem]); //problem
+
+    setItem("");
+    setQuantity("");
   }
 
   function handleCheckout() {
@@ -30,15 +33,13 @@ function App() {
   return (
     <div>
       <h1>Add Items to shop: </h1>
-      <div>
-        <div>
-          <label>Item Name: </label>
-          <input
-            placeholder="kitkat"
-            type="text"
-            onChange={(e) => setItem(e.target.value)}
-          />
-        </div>
+      <div id="data">
+        <label>Item Name: </label>
+        <input
+          placeholder="kitkat"
+          type="text"
+          onChange={(e) => setItem(e.target.value)}
+        />
 
         <label>Quantity: </label>
         <input
@@ -51,14 +52,20 @@ function App() {
 
       <div>
         <h3>Cart:</h3>
-        {cartItems.length === 0 && <div>Cart is empty</div>}
-        <ul id="cart-list">
+        <table>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+          </tr>
           {cartItems.map((cartItem, index) => (
-            <li style={{}} key={index}>
-              {cartItem.item} - {cartItem.quantity}
-            </li>
+            <tr key={index}>
+              <td>{cartItem.item}</td>
+              <td>{cartItem.quantity}</td>
+            </tr>
           ))}
-        </ul>
+        </table>
+
+        {cartItems.length === 0 && <div>Cart is empty</div>}
       </div>
 
       {cartItems.length > 0 && (
